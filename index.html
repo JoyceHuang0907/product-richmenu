@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNG + 多個 GIF 疊加</title>
+    <style>
+        /* 容器：確保自適應寬度 */
+        .container {
+            position: relative;
+            width: 100vw;  /* 讓背景圖鋪滿螢幕 */
+            max-width: 2000px; /* 限制最大寬度 */
+            margin: 0 auto;
+        }
+
+        /* 背景圖片：自適應縮放 */
+        .background-img {
+            width: 100%;
+            display: block;
+        }
+
+        /* 第一張 GIF 疊加 */
+        .overlay-gif1 {
+            position: absolute;
+            width: 15%;
+            top: calc(5960 / 7600 * 100%);
+            left: calc(320 / 2000 * 100%);
+            transform: translateY(-50%);  /* 只往上修正 Y 軸 */
+        }
+
+        /* 第二張 GIF 疊加 */
+        .overlay-gif2 {
+            position: absolute;
+            width: 15.5%;
+            top: calc(5960 / 7600 * 100%);
+            left: calc(1400 / 2000 * 100%);
+            transform: translateY(-50%);  /* 只往上修正 Y 軸 */
+        }
+
+        /* 確保網頁可以上下滾動 */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://file.talk.tw/Editor/686/Media/MyMedia43120250221170807.png" class="background-img" alt="商品介紹">
+        <!-- 第一張 GIF -->
+        <img src="https://file.talk.tw/Editor/686/Media/MyMedia02820250221171450.gif" class="overlay-gif1" alt="動畫1">
+        <!-- 第二張 GIF -->
+        <img src="https://file.talk.tw/Editor/686/Media/MyMedia63520250221173700.gif" class="overlay-gif2" alt="動畫2">
+    </div>
+</body>
+</html>
